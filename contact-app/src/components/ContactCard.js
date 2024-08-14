@@ -10,8 +10,8 @@ const ContactCard = (props) => {
       <img className="ui avatar image" src={user} alt="user" />
       <div className="content">
         <Link 
-          to={`/contact/${id}`} // Use template literals correctly here
-          state={{ contact: props.contact }}
+          to={`/contact/${id}`} 
+          state={{ contact: props.contact }} 
         >
           <div className="header">{name}</div>
           <div>{email}</div>
@@ -20,8 +20,17 @@ const ContactCard = (props) => {
       <i
         className="trash alternate outline icon"
         style={{ color: "red", marginTop: "7px" }}
-        onClick={() => props.clickHandler(id)} // Fixed typo `clickHander` to `clickHandler`
+        onClick={() => props.clickHandler(id)} 
       ></i>
+      <Link 
+        to={`/edit/${id}`} 
+        state={{ contact: props.contact }} 
+      >
+        <i
+          className="edit alternate outline icon"
+          style={{ color: "blue", marginTop: "7px" }}
+        ></i>
+      </Link>
     </div>
   );
 };
